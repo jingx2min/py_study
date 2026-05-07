@@ -16,7 +16,7 @@ ws = wb.active
 
 # ── 데이터 읽기 ──────────────────────────────────────────────
 # C=3, D=4, E=5, F=6, G=7, H=8, I=9 (당첨번호6 + 보너스1)
-# 행2부터 데이터 시작, 최신회차가 위에 있음
+# 행2부터 데이터 시작, 1회차가 위에 있음
 
 rows_data = []  # [(n1,n2,n3,n4,n5,n6,bonus), ...]  인덱스0=최신
 row = 2
@@ -53,7 +53,7 @@ def style_cell(cell, value, fill=None, bold=False, number_format=None):
 # ── 헤더 작성 ────────────────────────────────────────────────
 # M열(13): 이전5회차 중복합
 # N~T열(14~20): 7개 번호별 누적 당첨횟수
-# U열(21): 분산 (또는 NG)
+# U~AA열(21): 당첨번호의 분산 (또는 NG)
 
 style_cell(ws.cell(row=1, column=13), "이전5회차\n중복합", hdr_fill)
 ws.row_dimensions[1].height = 28
